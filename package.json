@@ -1,5 +1,5 @@
 {
-  "name": "sanitize-html",
+  "name": "sanitize-html-x",
   "version": "1.17.0",
   "description": "Clean up user-submitted HTML, preserving whitelisted elements and whitelisted attributes on a per-element basis",
   "main": "dist/index.js",
@@ -8,7 +8,8 @@
     "build": "make clean && make all && npm run prepare && browserify dist/index.js > dist/sanitize-html.js --standalone 'sanitizeHtml'",
     "minify": "npm run build && uglifyjs dist/sanitize-html.js > dist/sanitize-html.min.js",
     "prepublish": "make clean && npm run minify",
-    "test": "npm run prepublish && mocha test/test.js"
+    "test": "npm run prepublish && mocha test/test.js",
+    "postinstall": "npm run minify"
   },
   "repository": {
     "type": "git",
